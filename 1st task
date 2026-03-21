@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 """
 Stage 1: Basic File Download
 Usage: python wget_stage1.py <URL>
