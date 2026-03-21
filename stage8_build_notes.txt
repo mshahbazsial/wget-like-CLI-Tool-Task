@@ -1,0 +1,20 @@
+Stage 8 - Packaging notes
+=========================
+
+This environment does not include py2exe/cx_Freeze/PyInstaller, so the project uses Python's built-in zipapp as a similar packaging method.
+
+Produced artifact:
+- miniwget_stage8.pyz
+
+How it works:
+- zipapp creates an executable Python application archive with a shebang.
+- On Unix-like systems it can be run directly after chmod +x.
+- On Windows it can be run with: py miniwget_stage8.pyz
+
+Build command used:
+python -m zipapp stage8_app -m 'app:main' -o miniwget_stage8.pyz -p '/usr/bin/env python3'
+
+To build with cx_Freeze later on another machine:
+1. pip install cx_Freeze
+2. create setup.py
+3. python setup.py build
